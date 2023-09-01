@@ -13,7 +13,7 @@ public class Notas extends AppCompatActivity {
         setContentView(R.layout.activity_notas);
     }
     public void Sair (View view){
-        finish();
+        onBackPressed();
     }
 
 }

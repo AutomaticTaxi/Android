@@ -8,9 +8,12 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="408dp"
-        android:layout_height="606dp"
+        android:id="@+id/Text_Nota"
+        android:layout_width="395dp"
+        android:layout_height="582dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         android:fadeScrollbars="true"
         android:hint="Digite algo aqui"
         android:isScrollContainer="true"
@@ -20,12 +23,13 @@
         android:scrollHorizontally="true"
         android:verticalScrollbarPosition="defaultPosition"
         app:layout_constraintBottom_toTopOf="@+id/button2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Bt_abrir_Tsalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -46,7 +50,7 @@
         android:text="Notas"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button" />
+        app:layout_constraintStart_toEndOf="@+id/Bt_abrir_Tsalvar" />
 
     <Button
         android:id="@+id/button3"
