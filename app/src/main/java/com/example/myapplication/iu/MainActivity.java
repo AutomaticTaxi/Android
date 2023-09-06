@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.iu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import com.example.myapplication.R;
+
 
 public class MainActivity extends AppCompatActivity {
-    private EditText conteudo = findViewById(R.id.Text_Nota);
+    private EditText conteudo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,10 +23,11 @@ public class MainActivity extends AppCompatActivity {
     public void Abrir_Salvar(View view){
         Intent intent = new Intent(MainActivity.this, Salvar.class);
         startActivity(intent);
-        intent.putExtra("Conteudo_da_nota",conteudo.getText().toString());
+        conteudo = findViewById(R.id.Text_Nota);
+       intent.putExtra("Conteudo_da_nota",conteudo.getText().toString());
     }
     public void Abrir_Notas(View view){
-        Intent intent = new Intent(MainActivity.this, Notas.class);
+        Intent intent = new Intent(MainActivity.this, TelaNotas.class);
         startActivity(intent);
     }
 }

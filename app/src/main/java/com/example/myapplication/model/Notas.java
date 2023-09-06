@@ -1,9 +1,20 @@
 package com.example.myapplication.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "notas")
+
 public class Notas {
+
+    @PrimaryKey(autoGenerate = true)
     private int Id;
+    @ColumnInfo(name = "nome")
     private String Nome;
+    @ColumnInfo(name = "afazer")
     private Boolean Afazer;
+    @ColumnInfo(name = "conteudo")
     private String Conteudo;
 
     public int getId() {
@@ -40,12 +51,7 @@ public class Notas {
 
     @Override
     public String toString() {
-        return "Notas{" +
-                "Id=" + Id +
-                ", Nome='" + Nome + '\'' +
-                ", Afazer=" + Afazer +
-                ", Conteudo='" + Conteudo + '\'' +
-                '}';
+        return Id +" " + Nome +" " + Afazer + " " + Conteudo;
     }
 
 
