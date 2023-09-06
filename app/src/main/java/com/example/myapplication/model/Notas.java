@@ -4,9 +4,11 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "notas")
+@Entity
 
 public class Notas {
+    public Notas() {
+    }
 
     @PrimaryKey(autoGenerate = true)
     private int Id;

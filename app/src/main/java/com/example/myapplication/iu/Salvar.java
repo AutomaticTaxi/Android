@@ -11,15 +11,12 @@ import android.widget.ListView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.Notas;
-import com.example.myapplication.persistense.DataBaseClient;
-import com.example.myapplication.persistense.NotasDAO;
-import com.example.myapplication.persistense.NotasDataBase;
 
 import java.util.List;
 
 public class Salvar extends AppCompatActivity {
-    NotasDataBase db = DataBaseClient.getNotasDataBase(getApplicationContext());
-    NotasDAO notasDAO = db.notasDAO();
+
+
     public EditText nome_Nota;
     public CheckBox check_Nota;
     public ListView listagem;
