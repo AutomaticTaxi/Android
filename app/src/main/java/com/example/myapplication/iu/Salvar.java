@@ -1,8 +1,10 @@
 package com.example.myapplication.iu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.RoomDatabase;
 
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
@@ -11,16 +13,19 @@ import android.widget.ListView;
 
 import com.example.myapplication.R;
 import com.example.myapplication.model.Notas;
+import com.example.myapplication.persistense.NotasDataBase;
+import com.example.myapplication.persistense.NotasDataBase_Impl;
+import com.example.myapplication.persistense.RepositoryNotas;
 
 import java.util.List;
 
 public class Salvar extends AppCompatActivity {
-
-
+    private RepositoryNotas repositoryNotas;
     public EditText nome_Nota;
     public CheckBox check_Nota;
     public ListView listagem;
     public List<Notas>dados;
+
 
 
     @Override
@@ -28,7 +33,7 @@ public class Salvar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_salvar);
         mapeamentoXML();
-
+        this.repositoryNotas = new RepositoryNotas(getApplicationContext());
 
 
 
@@ -53,6 +58,7 @@ public class Salvar extends AppCompatActivity {
         }
         n.setNome(nome_Nota.toString());
         n.setAfazer(check_Nota.isChecked());
+        repositoryNotas.insert(n);
 
     }
 }
