@@ -13,7 +13,7 @@ import java.util.List;
 @Dao
 public interface NotasDAO {
     @Insert
-    long inserirNota(Notas nota);
+    long inserirNota(Notas notas);
     @Update
     int atualiza(Notas notas);
     @Delete

@@ -12,6 +12,7 @@ import com.example.myapplication.R;
 
 public class MainActivity extends AppCompatActivity {
     private EditText conteudo;
+    private String stringconteudo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(MainActivity.this, Salvar.class);
         startActivity(intent);
         conteudo = findViewById(R.id.Text_Nota);
-       intent.putExtra("Conteudo_da_nota",conteudo.getText().toString());
+        stringconteudo = conteudo.getText().toString();
+       intent.putExtra("ContNota",stringconteudo);
+       startActivity(intent);
     }
     public void Abrir_Notas(View view){
         Intent intent = new Intent(MainActivity.this, TelaNotas.class);
